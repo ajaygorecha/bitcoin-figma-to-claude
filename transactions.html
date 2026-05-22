@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bitcoin — Transactions</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body class="dashboard-body">
+    <div class="dashboard-wrap">
+
+      <!-- ===================== SIDEBAR ===================== -->
+      <aside class="sidebar">
+        <div class="sidebar-logo-wrap">
+          <img src="assets/images/logo.svg" alt="Bitcoin logo" class="sidebar-logo" />
+        </div>
+        <nav class="sidebar-nav" aria-label="Main navigation">
+          <a href="dashboard.html" class="nav-item">
+            <i class="ri-layout-grid-line nav-item-icon" aria-hidden="true"></i>
+            <span>Dashboard</span>
+          </a>
+          <a href="buy-sell.html" class="nav-item">
+            <i class="ri-exchange-funds-line nav-item-icon" aria-hidden="true"></i>
+            <span>Buy &amp; Sell</span>
+          </a>
+          <a href="transactions.html" class="nav-item nav-item--active" aria-current="page">
+            <i class="ri-bank-card-line nav-item-icon" aria-hidden="true"></i>
+            <span>Transactions</span>
+          </a>
+          <a href="#" class="nav-item">
+            <i class="ri-group-line nav-item-icon" aria-hidden="true"></i>
+            <span>Transfers</span>
+          </a>
+          <a href="#" class="nav-item">
+            <i class="ri-user-shared-line nav-item-icon" aria-hidden="true"></i>
+            <span>Referrals</span>
+          </a>
+        </nav>
+      </aside>
+
+      <!-- ===================== MAIN CONTENT ===================== -->
+      <div class="main-content">
+
+        <!-- Top Bar -->
+        <header class="top-bar">
+          <div class="top-bar-search">
+            <i class="ri-search-line search-icon" aria-hidden="true"></i>
+            <span class="search-placeholder">Search now...</span>
+          </div>
+          <div class="top-bar-actions">
+            <button class="notification-btn" aria-label="Notifications">
+              <i class="ri-notification-3-line" aria-hidden="true"></i>
+            </button>
+            <button class="user-profile" id="userProfileBtn" aria-haspopup="true" aria-expanded="false" aria-label="User menu">
+              <div class="user-avatar" aria-hidden="true">LA</div>
+              <div class="user-info">
+                <span class="user-name">Leslie Alexander</span>
+                <span class="user-status">Online</span>
+              </div>
+              <i class="ri-arrow-down-s-fill user-caret" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <!-- Profile Dropdown -->
+          <div class="profile-dropdown" id="profileDropdown" role="menu" aria-hidden="true">
+            <button class="profile-dropdown-item profile-dropdown-item--active" role="menuitem">Profile</button>
+            <button class="profile-dropdown-item" role="menuitem">Settings</button>
+            <button class="profile-dropdown-item" role="menuitem">Logout</button>
+          </div>
+        </header>
+
+        <!-- Page Content -->
+        <div class="page-content">
+
+          <!-- Breadcrumbs -->
+          <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <span class="breadcrumb-item">Home</span>
+            <span class="breadcrumb-item">/</span>
+            <span class="breadcrumb-item breadcrumb-item--active">Transactions</span>
+          </nav>
+
+          <!-- Transactions Card -->
+          <div class="txp-card">
+
+            <!-- Card Header -->
+            <header class="txp-card-header">
+              <div class="txp-card-title-wrap">
+                <div class="txp-card-accent" aria-hidden="true"></div>
+                <h1 class="txp-card-title">Transactions</h1>
+              </div>
+              <div class="txp-card-actions">
+                <button class="txp-action-btn" aria-label="Download transactions">
+                  <i class="ri-download-cloud-line" aria-hidden="true"></i>
+                  Download
+                </button>
+                <button class="txp-action-btn" aria-label="Filter transactions">
+                  <i class="ri-filter-3-line" aria-hidden="true"></i>
+                  Filter
+                </button>
+              </div>
+            </header>
+
+            <!-- Table Header -->
+            <div class="txp-table-header" role="rowgroup" aria-label="Table column headers">
+              <div class="txp-th">Coin Name</div>
+              <div class="txp-th">Payment Method</div>
+              <div class="txp-th">Total Balance</div>
+              <div class="txp-th txp-th--right">Total Coin</div>
+            </div>
+
+            <!-- Table Body -->
+            <div class="txp-table-body" role="list" aria-label="Transaction list">
+
+              <!-- Row: Bought -->
+              <div class="txp-row" role="listitem">
+                <div class="txp-col-name">
+                  <div class="txp-row-icon txp-row-icon--bought" aria-hidden="true">
+                    <i class="ri-add-line"></i>
+                  </div>
+                  <div class="txp-row-coininfo">
+                    <span class="txp-row-title">Bought: Bitcoin</span>
+                    <div class="txp-row-meta">
+                      <span class="txp-row-date">23 Jan, 2022</span>
+                      <span class="txp-row-sep" aria-hidden="true"></span>
+                      <span class="txp-row-time">10:13 am</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="txp-col-payment">Using Visa credit ***3453</div>
+                <div class="txp-col-balance">+345.99 USD</div>
+                <div class="txp-col-coin txp-col-coin--positive">+1.098038435 BTC</div>
+              </div>
+
+              <!-- Row: Sent -->
+              <div class="txp-row" role="listitem">
+                <div class="txp-col-name">
+                  <div class="txp-row-icon txp-row-icon--sent" aria-hidden="true">
+                    <i class="ri-arrow-left-line"></i>
+                  </div>
+                  <div class="txp-row-coininfo">
+                    <span class="txp-row-title">Sent: Bitcoin</span>
+                    <div class="txp-row-meta">
+                      <span class="txp-row-date">23 Jan, 2022</span>
+                      <span class="txp-row-sep" aria-hidden="true"></span>
+                      <span class="txp-row-time">10:13 am</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="txp-col-payment">Using Visa credit ***6585</div>
+                <div class="txp-col-balance">+123.99 USD</div>
+                <div class="txp-col-coin txp-col-coin--negative">-1.098038 BTC</div>
+              </div>
+
+              <!-- Row: Received -->
+              <div class="txp-row" role="listitem">
+                <div class="txp-col-name">
+                  <div class="txp-row-icon txp-row-icon--received" aria-hidden="true">
+                    <i class="ri-arrow-right-line"></i>
+                  </div>
+                  <div class="txp-row-coininfo">
+                    <span class="txp-row-title">Received: Bitcoin</span>
+                    <div class="txp-row-meta">
+                      <span class="txp-row-date">23 Jan, 2022</span>
+                      <span class="txp-row-sep" aria-hidden="true"></span>
+                      <span class="txp-row-time">10:13 am</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="txp-col-payment">Using Visa credit ***3453</div>
+                <div class="txp-col-balance">+565.99 USD</div>
+                <div class="txp-col-coin txp-col-coin--positive">+0.9803935 BTC</div>
+              </div>
+
+              <!-- Row: Declined -->
+              <div class="txp-row" role="listitem">
+                <div class="txp-col-name">
+                  <div class="txp-row-icon txp-row-icon--declined" aria-hidden="true">
+                    <i class="ri-close-line"></i>
+                  </div>
+                  <div class="txp-row-coininfo">
+                    <span class="txp-row-title">Declined: Not sufficient fund</span>
+                    <div class="txp-row-meta">
+                      <span class="txp-row-date">23 Jan, 2022</span>
+                      <span class="txp-row-sep" aria-hidden="true"></span>
+                      <span class="txp-row-time">10:13 am</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="txp-col-payment">Using Visa credit ***3453</div>
+                <div class="txp-col-balance txp-col-balance--muted">3456.99 USD</div>
+                <div class="txp-col-coin txp-col-coin--muted">2.34534 BTC</div>
+              </div>
+
+              <!-- Row: Bought (2) -->
+              <div class="txp-row" role="listitem">
+                <div class="txp-col-name">
+                  <div class="txp-row-icon txp-row-icon--bought" aria-hidden="true">
+                    <i class="ri-add-line"></i>
+                  </div>
+                  <div class="txp-row-coininfo">
+                    <span class="txp-row-title">Bought: Bitcoin</span>
+                    <div class="txp-row-meta">
+                      <span class="txp-row-date">23 Jan, 2022</span>
+                      <span class="txp-row-sep" aria-hidden="true"></span>
+                      <span class="txp-row-time">10:13 am</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="txp-col-payment">Using Visa credit ***3453</div>
+                <div class="txp-col-balance">+345.99 USD</div>
+                <div class="txp-col-coin txp-col-coin--positive">+1.098038435 BTC</div>
+              </div>
+
+              <!-- Row: Sell -->
+              <div class="txp-row" role="listitem">
+                <div class="txp-col-name">
+                  <div class="txp-row-icon txp-row-icon--sold" aria-hidden="true">
+                    <i class="ri-subtract-line"></i>
+                  </div>
+                  <div class="txp-row-coininfo">
+                    <span class="txp-row-title">Sell: Bitcoin</span>
+                    <div class="txp-row-meta">
+                      <span class="txp-row-date">23 Jan, 2022</span>
+                      <span class="txp-row-sep" aria-hidden="true"></span>
+                      <span class="txp-row-time">10:13 am</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="txp-col-payment">Using Visa credit ***4684</div>
+                <div class="txp-col-balance">-78.99 USD</div>
+                <div class="txp-col-coin txp-col-coin--negative">-0.53535545 BTC</div>
+              </div>
+
+              <!-- Row: Sent (2) -->
+              <div class="txp-row" role="listitem">
+                <div class="txp-col-name">
+                  <div class="txp-row-icon txp-row-icon--sent" aria-hidden="true">
+                    <i class="ri-arrow-left-line"></i>
+                  </div>
+                  <div class="txp-row-coininfo">
+                    <span class="txp-row-title">Sent: Bitcoin</span>
+                    <div class="txp-row-meta">
+                      <span class="txp-row-date">23 Jan, 2022</span>
+                      <span class="txp-row-sep" aria-hidden="true"></span>
+                      <span class="txp-row-time">10:13 am</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="txp-col-payment">Using Visa credit ***6585</div>
+                <div class="txp-col-balance">+123.99 USD</div>
+                <div class="txp-col-coin txp-col-coin--negative">-1.098038 BTC</div>
+              </div>
+
+              <!-- Row: Sell (2) -->
+              <div class="txp-row" role="listitem">
+                <div class="txp-col-name">
+                  <div class="txp-row-icon txp-row-icon--sold" aria-hidden="true">
+                    <i class="ri-subtract-line"></i>
+                  </div>
+                  <div class="txp-row-coininfo">
+                    <span class="txp-row-title">Sell: Bitcoin</span>
+                    <div class="txp-row-meta">
+                      <span class="txp-row-date">23 Jan, 2022</span>
+                      <span class="txp-row-sep" aria-hidden="true"></span>
+                      <span class="txp-row-time">10:13 am</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="txp-col-payment">Using Visa credit ***4684</div>
+                <div class="txp-col-balance">-78.99 USD</div>
+                <div class="txp-col-coin txp-col-coin--negative">-0.53535545 BTC</div>
+              </div>
+
+              <!-- Row: Declined (2) -->
+              <div class="txp-row" role="listitem">
+                <div class="txp-col-name">
+                  <div class="txp-row-icon txp-row-icon--declined" aria-hidden="true">
+                    <i class="ri-close-line"></i>
+                  </div>
+                  <div class="txp-row-coininfo">
+                    <span class="txp-row-title">Declined: Not sufficient fund</span>
+                    <div class="txp-row-meta">
+                      <span class="txp-row-date">23 Jan, 2022</span>
+                      <span class="txp-row-sep" aria-hidden="true"></span>
+                      <span class="txp-row-time">10:13 am</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="txp-col-payment">Using Visa credit ***3453</div>
+                <div class="txp-col-balance txp-col-balance--muted">3456.99 USD</div>
+                <div class="txp-col-coin txp-col-coin--muted">2.34534 BTC</div>
+              </div>
+
+              <!-- Row: Received (partially visible behind gradient) -->
+              <div class="txp-row" role="listitem">
+                <div class="txp-col-name">
+                  <div class="txp-row-icon txp-row-icon--received" aria-hidden="true">
+                    <i class="ri-arrow-right-line"></i>
+                  </div>
+                  <div class="txp-row-coininfo">
+                    <span class="txp-row-title">Received: Bitcoin</span>
+                    <div class="txp-row-meta">
+                      <span class="txp-row-date">23 Jan, 2022</span>
+                      <span class="txp-row-sep" aria-hidden="true"></span>
+                      <span class="txp-row-time">10:13 am</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="txp-col-payment">Using Visa credit ***3453</div>
+                <div class="txp-col-balance">+565.99 USD</div>
+                <div class="txp-col-coin txp-col-coin--positive">+0.9803935 BTC</div>
+              </div>
+
+            </div><!-- /.txp-table-body -->
+
+            <!-- Gradient Footer + See More -->
+            <div class="txp-card-footer">
+              <a href="#" class="txp-see-more">
+                See More
+                <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+              </a>
+            </div>
+
+          </div><!-- /.txp-card -->
+
+        </div><!-- /.page-content -->
+      </div><!-- /.main-content -->
+    </div><!-- /.dashboard-wrap -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/script.js"></script>
+  </body>
+</html>

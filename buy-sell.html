@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bitcoin — Buy &amp; Sell</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body class="dashboard-body">
+    <div class="dashboard-wrap">
+
+      <!-- ===================== SIDEBAR ===================== -->
+      <aside class="sidebar">
+        <div class="sidebar-logo-wrap">
+          <img src="assets/images/logo.svg" alt="Bitcoin logo" class="sidebar-logo" />
+        </div>
+        <nav class="sidebar-nav" aria-label="Main navigation">
+          <a href="dashboard.html" class="nav-item">
+            <i class="ri-layout-grid-line nav-item-icon" aria-hidden="true"></i>
+            <span>Dashboard</span>
+          </a>
+          <a href="buy-sell.html" class="nav-item nav-item--active" aria-current="page">
+            <i class="ri-exchange-funds-line nav-item-icon" aria-hidden="true"></i>
+            <span>Buy &amp; Sell</span>
+          </a>
+          <a href="transactions.html" class="nav-item">
+            <i class="ri-bank-card-line nav-item-icon" aria-hidden="true"></i>
+            <span>Transactions</span>
+          </a>
+          <a href="#" class="nav-item">
+            <i class="ri-group-line nav-item-icon" aria-hidden="true"></i>
+            <span>Transfers</span>
+          </a>
+          <a href="#" class="nav-item">
+            <i class="ri-user-shared-line nav-item-icon" aria-hidden="true"></i>
+            <span>Referrals</span>
+          </a>
+        </nav>
+      </aside>
+
+      <!-- ===================== MAIN CONTENT ===================== -->
+      <div class="main-content">
+
+        <!-- Top Bar -->
+        <header class="top-bar">
+          <div class="top-bar-search">
+            <i class="ri-search-line search-icon" aria-hidden="true"></i>
+            <span class="search-placeholder">Search now...</span>
+          </div>
+          <div class="top-bar-actions">
+            <button class="notification-btn" aria-label="Notifications">
+              <i class="ri-notification-3-line" aria-hidden="true"></i>
+            </button>
+            <button class="user-profile" id="userProfileBtn" aria-haspopup="true" aria-expanded="false" aria-label="User menu">
+              <div class="user-avatar" aria-hidden="true">LA</div>
+              <div class="user-info">
+                <span class="user-name">Leslie Alexander</span>
+                <span class="user-status">Online</span>
+              </div>
+              <i class="ri-arrow-down-s-fill user-caret" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <!-- Profile Dropdown -->
+          <div class="profile-dropdown" id="profileDropdown" role="menu" aria-hidden="true">
+            <button class="profile-dropdown-item profile-dropdown-item--active" role="menuitem">Profile</button>
+            <button class="profile-dropdown-item" role="menuitem">Settings</button>
+            <button class="profile-dropdown-item" role="menuitem">Logout</button>
+          </div>
+        </header>
+
+        <!-- Page Content -->
+        <div class="page-content">
+
+          <!-- Breadcrumbs -->
+          <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <span class="breadcrumb-item">Home</span>
+            <span class="breadcrumb-item">/</span>
+            <span class="breadcrumb-item breadcrumb-item--active">Buy &amp; Sell</span>
+          </nav>
+
+          <!-- Buy & Sell Card -->
+          <div class="bs-card-wrap">
+            <div class="bs-card">
+
+              <!-- Tabs -->
+              <div class="bs-tabs" role="tablist">
+                <button
+                  class="bs-tab bs-tab--active"
+                  id="tabBuy"
+                  role="tab"
+                  aria-selected="true"
+                  aria-controls="panelBuy"
+                >Buy</button>
+                <button
+                  class="bs-tab"
+                  id="tabSell"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="panelBuy"
+                >Sell</button>
+              </div>
+
+              <!-- Form -->
+              <form class="bs-form" id="buySellForm" novalidate>
+
+                <!-- Coin Name -->
+                <div class="form-field">
+                  <label class="field-label" for="coinSelect">Coin Name</label>
+                  <button type="button" class="bs-select" id="coinSelect" aria-label="Select coin">
+                    <div class="bs-select-coin">
+                      <div class="coin-icon coin-icon--bitcoin" aria-hidden="true">
+                        <i class="ri-bit-coin-fill"></i>
+                      </div>
+                      <span class="bs-coin-name">Bitcoin</span>
+                      <span class="bs-coin-ticker">BTC</span>
+                    </div>
+                    <i class="ri-arrow-down-s-fill bs-caret" aria-hidden="true"></i>
+                  </button>
+                </div>
+
+                <!-- Amount -->
+                <div class="form-field">
+                  <label class="field-label" for="amountInput">Amount</label>
+                  <div class="bs-amount-wrap">
+                    <div class="bs-amount-left">
+                      <span class="bs-amount-symbol">$</span>
+                      <input
+                        type="number"
+                        id="amountInput"
+                        name="amount"
+                        class="bs-amount-input"
+                        value="708.83"
+                        min="0"
+                        step="0.01"
+                        aria-label="Amount in selected currency"
+                      />
+                    </div>
+                    <button type="button" class="bs-amount-right" aria-label="Select currency">
+                      <span class="bs-currency-label">USD</span>
+                      <i class="ri-arrow-down-s-fill bs-caret" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Payment Method -->
+                <div class="form-field">
+                  <label class="field-label" for="paymentSelect">Payment Method</label>
+                  <button type="button" class="bs-select" id="paymentSelect" aria-label="Select payment method">
+                    <div class="bs-payment-info">
+                      <span class="bs-payment-bank">Bank of America</span>
+                      <span class="bs-payment-mask">(****234)</span>
+                    </div>
+                    <i class="ri-arrow-down-s-fill bs-caret" aria-hidden="true"></i>
+                  </button>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="btn-signin bs-submit" id="bsSubmitBtn">
+                  Buy Bitcoin - $708.83
+                </button>
+
+              </form>
+            </div>
+          </div>
+
+        </div><!-- /.page-content -->
+      </div><!-- /.main-content -->
+    </div><!-- /.dashboard-wrap -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/script.js"></script>
+  </body>
+</html>
